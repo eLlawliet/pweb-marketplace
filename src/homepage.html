@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        .hero {
+            background-color: #666;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .product-box {
+            background-color: #aaa;
+            height: 220px;
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .custom-size {
+            width: 100%;
+            height: auto;
+        }
+
+        /* ukuran saat viewport lebih besar dari md (≥768px) */
+        @media (min-width: 1150px) {
+            .custom-size {
+                width: 1176px;
+                /* 392 x 3 kolom */
+                height: 513px;
+            }
+        }
+
+        
+
+        .discount-badge {
+            position: absolute;
+            top: 0.5rem;
+            left: 0.5rem;
+            background: black;
+            color: white;
+            padding: 2px 6px;
+            font-size: 0.75rem;
+            border-radius: 0.25rem;
+        }
+
+        .usp-box {
+            background-color: #bbb;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            border-radius: 0.5rem;
+        }
+
+        .footer {
+            background-color: #222;
+            color: white;
+            padding: 2rem 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">LOGO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button"
+                            data-bs-toggle="dropdown">Categories</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Bedroom Furniture</a></li>
+                            <li><a class="dropdown-item" href="#">Living Room Furniture</a></li>
+                            <li><a class="dropdown-item" href="#">Dining Room Furniture</a></li>
+                            <li><a class="dropdown-item" href="#">Sofa Sets</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-person"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero width-full mb-md-3 ">
+        <h2>Crafting Comfort, Redefining Spaces.<br>Your Home, Your Signature Style!</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla fringilla mauris in metus feugiat, luctus
+            auctor consectetur elit. quis sodales.</p>
+    </div>
+
+    <!-- Categories -->
+    <div class="container py-5">
+        <h5 class="text-center">View Our Range Of Categories</h5>
+        <p class="text-center mb-5 ">Pilih kategori furniture favoritmu!</p>
+        <div class="row custom-size mx-auto" style="margin-bottom: 170px;">
+            <div class="col-12 col-md-4 mb-4 ">
+                <div class="card h-100 rounded-4 shadow-sm border-0">
+                    <img src="/pweb-marketplace/src/images/homepage/bedroom.jpeg" class="card-img-top rounded-top-4" alt="Bedroom Furniture">
+                    <div class="card-body text-center">
+                        <h6 class="card-title text-start">Bedroom Furniture</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4 rounded-4">
+                <div class="d-flex flex-column gap-3 h-100">
+                    <div class="card h-100 rounded-4 shadow-sm border-0" style="height: 240px;">
+                        <img src="/pweb-marketplace/src/images/homepage/living-room.jpeg" class="card-img-top rounded-top-4" alt="Dining Room Furniture" >
+                        <div class="card-body text-center">
+                            <h6 class="card-title">Living Room Furniture</h6>
+                        </div>
+                    </div>
+                    <div class="card h-100 rounded-4 shadow-sm border-0 " style="height: 240px">
+                        <img src="/pweb-marketplace/src/images/homepage/dining-room.jpeg" class="card-img-top rounded-top-4" alt="Dining Room Furniture">
+                        <div class="card-body text-center">
+                            <h6 class="card-title">Dining Room Furniture</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4 rounded-4">
+                <div class="card h-100 rounded-4 shadow-sm border-0">
+                    <img src="/pweb-marketplace/src/images/homepage/sofa-sets.jpeg" class="card-img-top rounded-top-4" alt="Sofa Sets">
+                    <div class="card-body text-center">
+                        <h6 class="card-title">Sofa Sets</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Featured Products -->
+    <div class="container py-5">
+        <h5>Featured Products</h5>
+        <div class="row g-3">
+            <div class="col-md-3" v-for="i in 3">
+                <div class="product-box"></div>
+                <p>Double Bed & Side Tables</p>
+                <p><del>$75.00</del> <strong>$60.00</strong> <i class="bi bi-plus-circle"></i></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Most Popular Products -->
+    <div class="container py-5">
+        <h5>Most Popular Products</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla fringilla mauris in metus feugiat.</p>
+        <div class="row g-3">
+            <div class="col-md-3" v-for="i in 8">
+                <div class="position-relative">
+                    <div class="discount-badge">40%</div>
+                    <div class="product-box"></div>
+                </div>
+                <p>Double Bed & Side Tables</p>
+                <p><del>$120.00</del> <strong>$90.00</strong> <i class="bi bi-plus-circle"></i></p>
+            </div>
+        </div>
+        <div class="text-end mt-3">
+            <button class="btn btn-dark">View All <i class="bi bi-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <!-- USP Section -->
+    <div class="container-fluid bg-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Have a Look at Our Unique Selling Proportions</h5>
+                    <button class="btn btn-dark mt-3">Read More</button>
+                </div>
+                <div class="col-md-4">
+                    <div class="usp-box">99%</div>
+                    <p>Lorem ipsum dolor sit amet...</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="usp-box">100%</div>
+                    <p>Lorem ipsum dolor sit amet...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <h6>PRODUCTS</h6>
+                    <p>Lorem ipsum</p>
+                    <p>Lorem ipsum</p>
+                    <p>Lorem ipsum</p>
+                </div>
+                <div class="col-md-2">
+                    <h6>LEGAL PAGES</h6>
+                    <p>Lorem ipsum Text</p>
+                    <p>Lorem ipsum Text</p>
+                    <p>Lorem ipsum Text</p>
+                </div>
+                <div class="col-md-2">
+                    <h6>PRODUCTS</h6>
+                    <p>Lorem ipsum</p>
+                    <p>Lorem ipsum</p>
+                    <p>Lorem ipsum</p>
+                </div>
+                <div class="col-md-2">
+                    <h6>PRODUCTS</h6>
+                    <p>Lorem ipsum</p>
+                    <p>Lorem ipsum</p>
+                    <p>Lorem ipsum</p>
+                </div>
+                <div class="col-md-2">
+                    <h6>LEGAL PAGES</h6>
+                    <p>Lorem ipsum Text</p>
+                    <p>Lorem ipsum Text</p>
+                    <p>Lorem ipsum Text</p>
+                </div>
+            </div>
+            <p class="text-center mt-4">Copyright &copy; 2025 Room Builder, Inc.</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
